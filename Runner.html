@@ -1,0 +1,40 @@
+d<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Jasmine Reference Host Spec Runner v2.0.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.1/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.1/jasmine.css">
+
+  <script type="text/javascript" src="lib/jasmine-2.0.1/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.1/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.1/boot.js"></script>
+
+    <script type="text/javascript" src="lib/require.js"></script>
+    <script type="text/javascript">
+        window.Log = console;
+
+        // Global configuration
+        window.oc = {
+            // websocket host must be configured here if different than the document's host
+            host: window.location.protocol == 'file:' ? '192.168.0.1:4242' : window.location.host
+        };
+
+        require(
+            [
+             	'wstest/example.spec.js'
+             	'wstest/ws-echo.spec.js',
+             	'wstest/ws-tmx-receiver.spec.js',
+            ],
+            function() {
+                jasmine.getEnv().execute();
+            }
+        );
+    </script>
+
+</head>
+
+<body>
+</body>
+</html>
