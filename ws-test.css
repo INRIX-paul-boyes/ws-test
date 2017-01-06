@@ -1,0 +1,17 @@
+.overview {
+    width: 600px;
+    border-top: black solid thick;
+    border-bottom: black solid thick;
+}
+
+.summary {
+    background-color: lightgoldenrodyellow;
+}
+
+.suite {
+    padding-top: 10px;
+}
+.suite-link {
+    font-size: larger;
+    font-weight: bolder;
+}
