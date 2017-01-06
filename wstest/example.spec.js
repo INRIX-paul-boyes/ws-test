@@ -23,8 +23,10 @@ define(['lib/WsTestBase', 'lib/PassFail'],function(WsTestBase, Test) {
             return ""+requestId;
         }
 
-        // Test a simple message
-        new Test('Basic Test', function(done, PF) {
+        // Test a simple message (see README notes on use of skipTest here)
+        new Test.skipTest('Not supported by SDK',
+            'Basic Test', function(done, PF) {
+
             PF.start();
             var id = getNextRequestId(),
                 method = 'get';
