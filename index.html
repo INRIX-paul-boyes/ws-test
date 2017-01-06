@@ -4,18 +4,46 @@
     <meta charset="UTF-8">
     <title>Runner Suite List</title>
     <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.1/jasmine.css">
+    <link rel="stylesheet" type="text/css" href="ws-test.css">
 </head>
 <body>
-<div class="jasmine_html-reporter spec-list">
+<div class="overview">
+    <p/>
+    <h2>Example of Jasmine-based WebSocket API tests</h2>
+    <p/>
+    <p>
+        These tests may be run against an OpenCar SDK or target integration instance.
+        <br/>
+        Please see README document for setup and use information.
+        <br/>
+        Use Chrome browser for best results.
+        <br/>
+        Open the browser JavaScript Console output to see detail logs as tests are run.
+    </p>
+    <p/>
 <div class="summary">
     <ul class="suite" id="suite-suite1">
-        <li class="suite-detail"><a href="Runner.html?spec=websocket%20tmx-receiver">websocket tmx-receiver</a></li>
+        <li class="suite-link"><a href="Runner.html?spec=websocket%20echo">Basic WebSocket Echo Tests</a></li>
+        <p class="suite-detail">Simply echoes back what is sent.  A good test of basic connectivity.
+            <br/>Supported in SDK and most target integrations.
+        </p>
     </ul>
     <ul class="suite" id="suite-suite2">
-        <li class="suite-detail"><a href="Runner.html?spec=websocket%20echo">websocket echo</a></li>
+        <li class="suite-link"><a href="Runner.html?spec=websocket%20tmx-receiver">WebSocket Telematics APIs</a></li>
+        <p class="suite-detail">Initializes the OpenCar TMX-Receiver interface and receives initial push of values.
+            <br/>Supported in SDK and most target integrations.
+        </p>
+        <li class="suite-link"><a href="Runner.html?spec=websocket%20gps">WebSocket GPS APIs</a></li>
+        <p class="suite-detail">Uses OpenCar TMX data for GPS integration to test basic GPS availability.
+            <br/>Supported in SDK and most target integrations.
+        </p>
     </ul>
     <ul class="suite" id="suite-suite3">
-        <li class="suite-detail"><a href="Runner.html?spec=example">http gateway tests</a></li>
+        <li class="suite-link"><a href="Runner.html?spec=example">Example WebSocket Interface Test</a></li>
+        <p class="suite-detail">Runs against the <i>Xeno Evaluation Kit</i> example interface.
+            <br/>Not supported by SDK or by most integrations.
+            <br/>Expected to fail on SDK, and targets where <b>/example</b> interface is not supplied.
+        </p>
     </ul>
 </div>
 </div>
