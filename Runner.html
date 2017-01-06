@@ -1,4 +1,4 @@
-d<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,9 +23,10 @@ d<!DOCTYPE HTML>
 
         require(
             [
+                'wstest/ws-echo.spec.js',
+                'wstest/ws-tmx-receiver.spec.js',
+                'wstest/ws-gps.spec.js',
              	'wstest/example.spec.js'
-             	'wstest/ws-echo.spec.js',
-             	'wstest/ws-tmx-receiver.spec.js',
             ],
             function() {
                 jasmine.getEnv().execute();

@@ -1,9 +1,9 @@
 define(['lib/WsTestBase', 'lib/PassFail'],function(WsTestBase, Test) {
     'use strict';
 
-    describe('websocket [TMX RECEIVER]', function() {
+    describe('websocket tmx-receiver', function() {
         beforeEach(function(done){
-            WsTestBase.beforeEach(done,'ws://' + window.oc.host + '/[TMX END POINT]');
+            WsTestBase.beforeEach(done,'ws://' + window.oc.host + '/tmx-receiver');
         });
         afterEach(WsTestBase.afterEach);
 
@@ -19,10 +19,10 @@ define(['lib/WsTestBase', 'lib/PassFail'],function(WsTestBase, Test) {
         }
 
         // Report (presumably correctly), as false
-        new Test('[METHOD] is accepted', function(done, PF) {
+        new Test('StartPush is accepted', function(done, PF) {
             PF.start();
             var id = getNextRequestId(),
-                method = '[METHOD]';
+                method = 'StartPush';
 
             WsTestBase.send({request:
             {
@@ -42,7 +42,7 @@ define(['lib/WsTestBase', 'lib/PassFail'],function(WsTestBase, Test) {
         new Test('Telematics events are received', function(done, PF) {
             PF.start();
             var id = getNextRequestId(),
-                method = '[METHOD]';
+                method = 'StartPush';
 
             WsTestBase.send({request:
             {
@@ -63,7 +63,7 @@ define(['lib/WsTestBase', 'lib/PassFail'],function(WsTestBase, Test) {
                 }
                 if(r && r.event) {
                     r = r.event;
-                    PF.expectValue(r.eventName, "[SOME EVENT]", "Expected to receive [SOME EVENT]");
+                    PF.expectValue(r.eventName, "SignalEvent", "Expected to receive SignalEvent");
                     PF.expectType(r.signals, "object", "Signals must be sent as an object type");
                     PF.expectValue(r.signals.length, undefined, "Signals must not be an array");
                     var count = 0;
